@@ -12,6 +12,11 @@
 \usepackage{indentfirst}
 \usepackage[left=3cm,right=1.5cm,top=2cm,bottom=2cm]{geometry}
 
+% Убираем нумерацию разделов
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
 \newcommand{\ministry}{МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ}
 \newcommand{\university}{Федеральное государственное бюджетное образовательное учреждение высшего образования}
 \newcommand{\universityname}{АДЫГЕЙСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ}
@@ -23,6 +28,12 @@
 \newcommand{\studentname}{Л. Д. Котенков}
 \newcommand{\supervisor}{С. В. Теплоухов}
 \newcommand{\cityyear}{Майкоп, 2025 г.}
+
+% Убираем нумерацию в оглавлении
+\usepackage{tocloft}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\numberline}[1]{}
 
 \begin{document}
 
@@ -225,5 +236,27 @@ int main() {
 \includegraphics[width=0.5\textwidth]{image3.jpeg}
 \caption{Пример работы программы}
 \end{figure}
+
+\newpage
+
+\section*{Использованные источники}
+\addcontentsline{toc}{section}{Использованные источники}
+
+\begin{thebibliography}{9}
+\bibitem{cpp1} 
+Бьерн Страуструп. \textbf{Программирование: принципы и практика использования C++ (2-е издание)}. — М.: Вильямс, 2022. — 1456 с. ISBN 978-5-907144-71-5.
+
+\bibitem{cpp2} 
+Александреску А., Маргулис Д. \textbf{Современный C++ для профессионалов}. — СПб.: Питер, 2021. — 512 с. ISBN 978-5-4461-1565-3.
+
+\bibitem{cpp3} 
+Р. Мухаметзянов. \textbf{C++20. Начала программирования}. — М.: ДМК Пресс, 2023. — 432 с. ISBN 978-5-93700-152-7.
+
+\bibitem{cpp4} 
+Джейсон Тернер. \textbf{C++ Best Practices}. — Leanpub, 2022. — 238 p. ISBN 978-1-7751256-1-8.
+
+\bibitem{cpp5} 
+Марк Грегори. \textbf{Professional C++ (5th Edition)}. — Wrox, 2021. — 1312 p. ISBN 978-1-119-69545-5.
+\end{thebibliography}
 
 \end{document}
